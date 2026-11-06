@@ -8,7 +8,7 @@ test("card materials, spending periods, card lock and prices update", async ({
     .getByRole("button", { name: "Blue", exact: true })
     .click();
   await expect(page.locator(".large-card-stage .bank-card")).toHaveClass(
-    /finish-blue/,
+    /(?:^|\s)finish-blue(?:\s|$)/,
   );
   await page
     .locator(".spending-panel")
